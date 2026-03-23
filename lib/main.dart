@@ -24,11 +24,9 @@ class ChartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Multi-layer Pie Chart")),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(10),
-          child: MultiLayerPieChart(data: demoData),
-        ),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: MultiLayerPieChart(data: demoData),
       ),
     );
   }
@@ -185,7 +183,7 @@ class PieChartPainter extends CustomPainter {
         sweepAngle,
         item.title,
         item.textColor,
-        item.textSize
+        item.textSize,
       );
 
       startAngle += sweepAngle;
@@ -199,9 +197,9 @@ class PieChartPainter extends CustomPainter {
     double midAngle,
     double sweepAngle,
     String text,
-    Color textColor, double fontSize,
+    Color textColor,
+    double fontSize,
   ) {
-
     TextStyle style = TextStyle(
       color: textColor,
       fontSize: fontSize,
@@ -271,22 +269,24 @@ List<DataModel> demoData = [
     percentageChange: 1,
     title: "Bank",
     color: Color(0XFFA7F6C4),
-    textColor: Colors.black
+    textColor: Colors.black,
+    textSize: 7,
   ),
   DataModel(
     volume: 10,
     percentageChange: 2,
     title: "IT",
     color: Color(0XFFA7F6C4),
-        textColor: Colors.black
-        
+    textColor: Colors.black,
+    textSize: 7,
   ),
   DataModel(
     volume: 10,
     percentageChange: 3,
     title: "Healthcare",
-   color: Color(0XFFFFA3A3),
-   textColor: Colors.black
+    color: Color(0XFFFFA3A3),
+    textColor: Colors.black,
+    textSize: 7,
   ),
 
   DataModel(
@@ -294,14 +294,15 @@ List<DataModel> demoData = [
     percentageChange: 1,
     title: "FMCG",
     color: Color(0XFFFFA3A3),
-    
-   textColor: Colors.black
+    textColor: Colors.black,
+    textSize: 7,
   ),
-    DataModel(
+  DataModel(
     volume: 10,
     percentageChange: 2,
     title: "Metal",
     color: Color(0XFFDF4141),
+    textSize: 7,
   ),
 
   DataModel(volume: 13, percentageChange: 2, title: "Metal", color: Colors.red),
